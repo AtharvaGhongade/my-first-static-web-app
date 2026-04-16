@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>3 Tier App</title></head>
+<body>
+  <h1>Azure 3-Tier Application</h1>
+  <button onclick="loadData()">Connect</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function loadData() {
+      const res = await fetch("https://backend-123.azurewebsites.net/api");
+      const data = await res.json();
+      document.getElementById("output").innerText =
+        JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
